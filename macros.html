@@ -3,20 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MiDota — Макросы для Dota 2 на Windows. Улучшайте геймплей с автоматизацией!">
-    <meta name="keywords" content="Dota 2, MiDota, макросы, игровые макросы, автоматизация Dota 2, Windows">
-    <title>MiDota — Программа для Dota 2 с макросами</title>
+    <title>MiDota — Макросы</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <style>
         body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: #e5e7eb; }
-        .hero-bg { position: relative; height: 96; overflow: hidden; }
-        .hero-bg video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        .cta-button { transition: all 0.3s ease; }
-        .cta-button:hover { transform: scale(1.05); }
+        .macro-card { background-color: #2d2d2d; border-radius: 8px; overflow: hidden; transition: transform 0.2s; }
+        .macro-card:hover { transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -26,35 +18,41 @@
             <h1 class="text-2xl font-bold">MiDota</h1>
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="macros.html" class="hover:text-blue-400">Макросы</a></li>
+                    <li><a href="index.html" class="hover:text-blue-400">Главная</a></li>
                     <li><a href="https://midota.noclip.me/" class="hover:text-blue-400">Форум</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg h-96 flex items-center justify-center text-white">
-        <video autoplay muted loop>
-            <source src="https://rr2---sn-a5meknd6.googlevideo.com/videoplayback?..." type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
-        <div class="text-center">
-            <h2 class="text-4xl font-bold mb-4">MiDota — Ваша программа для Dota 2</h2>
-            <p class="text-lg mb-6">Автоматизируйте геймплей с нашей программой и готовыми макросами!</p>
-            <a href="macros.html" class="cta-button bg-blue-600 text-white py-3 px-6 rounded-lg">Перейти к макросам</a>
-        </div>
-    </section>
-
-    <!-- Macros Section -->
-    <section id="macros" class="py-12 bg-gray-900">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">MiDota</h2>
-            <p class="text-gray-300 max-w-3xl mx-auto">
-                MiDota предоставляет мощные макросы для автоматизации геймплея в Dota 2.
-                Здесь вы найдёте скрипты для разных героев и ситуаций.
-            </p>
-            <a href="macros.html" class="cta-button bg-blue-600 text-white py-3 px-6 rounded-lg mt-6 inline-block">Смотреть макросы</a>
+    <!-- Macros Grid -->
+    <section class="py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Макросы для Dota 2</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Карточка макроса -->
+                <div class="macro-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Название макроса" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Макрос 1</h3>
+                        <p class="text-gray-400 text-sm">Краткое описание макроса.</p>
+                    </div>
+                </div>
+                <div class="macro-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Название макроса" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Макрос 2</h3>
+                        <p class="text-gray-400 text-sm">Краткое описание макроса.</p>
+                    </div>
+                </div>
+                <div class="macro-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Название макроса" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Макрос 3</h3>
+                        <p class="text-gray-400 text-sm">Краткое описание макроса.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
