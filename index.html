@@ -1,1 +1,75 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MiDota — программа со встроенными макросами для Dota 2 на Windows. Улучшайте геймплей с автоматизацией!">
+    <meta name="keywords" content="Dota 2, MiDota, программа для макросов, игровые макросы, автоматизация Dota 2, Windows">
+    <title>MiDota — Программа для Dota 2 с макросами</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: #e5e7eb; }
+        .hero-bg { position: relative; height: 96; overflow: hidden; }
+        .hero-bg video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">MiDota</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="https://midota.noclip.me/" class="hover:text-blue-400">Форум</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-96 flex items-center justify-center text-white">
+        <video autoplay muted loop>
+            <source src="/video/0812.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-4">MiDota — Ваша программа для Dota 2</h2>
+            <p class="text-lg mb-6">Автоматизируйте геймплей с нашей программой со встроенными макросами для Windows!</p>
+            <a href="#macros" class="cta-button bg-blue-600 text-white py-3 px-6 rounded-lg">Скачать MiDota</a>
+        </div>
+    </section>
+
+    <!-- Macros Section -->
+    <section id="macros" class="py-12 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Программа MiDota</h2>
+            <div class="prose max-w-3xl mx-auto text-gray-300 text-center">
+                <p>MiDota предоставляет мощные макросы для автоматизации геймплея в Dota 2. Оптимизируйте ластхиты, комбо способностей, вардинг и фарм с помощью интуитивно понятного интерфейса, разработанного специально для Windows. Улучшайте свою игру уже сегодня!</p>
+                <a href="#" class="cta-button bg-blue-600 text-white py-3 px-6 rounded-lg mt-4 inline-block">Скачать MiDota</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="bg-gray-800 py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Как использовать MiDota</h2>
+            <div class="prose max-w-3xl mx-auto text-gray-300">
+                <p>1. <strong>Скачайте программу</strong>: Загрузите MiDota с официального сайта.</p>
+                <p>2. <strong>Установите MiDota</strong>: Следуйте инструкциям установщика для Windows.</p>
+                <p>3. <strong>Настройте макросы</strong>: Выберите нужные макросы в интерфейсе программы и привяжите их к горячим клавишам.</p>
+                <p>4. <strong>Тестируйте в игре</strong>: Запустите Dota 2 и проверьте макросы в тренировочном режиме.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 MiDota. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
