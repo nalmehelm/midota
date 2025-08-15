@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiDota - Вход и Регистрация</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+  <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-3xl font-bold text-yellow-400 text-center mb-6">MiDota</h2>
+
+    <!-- Переключение между формами -->
+    <div class="flex justify-center mb-6">
+      <button id="loginTab" class="px-4 py-2 bg-yellow-600 hover:bg-orange-700 rounded-l-lg text-lg font-semibold transition duration-300">Вход</button>
+      <button id="registerTab" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-r-lg text-lg font-semibold transition duration-300">Регистрация</button>
+    </div>
+
+    <!-- Форма логина -->
+    <div id="loginForm" class="block">
+      <form id="loginFormElement" class="space-y-4">
+        <div>
+          <label for="loginEmail" class="block text-sm font-medium text-gray-300">Email</label>
+          <input type="email" id="loginEmail" name="email" class="mt-1 p-2 w-full bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+        </div>
+        <div>
+          <label for="loginPassword" class="block text-sm font-medium text-gray-300">Пароль</label>
+          <input type="password" id="loginPassword" name="password" class="mt-1 p-2 w-full bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+        </div>
+        <button type="submit" class="w-full px-4 py-2 bg-yellow-600 hover:bg-orange-700 rounded-lg text-lg font-semibold transition duration-300">Войти</button>
+      </form>
+    </div>
+
+    <!-- Форма регистрации -->
+    <div id="registerForm" class="hidden">
+      <form id="registerFormElement" class="space-y-4">
+        <div>
+          <label for="registerEmail" class="block text-sm font-medium text-gray-300">Email</label>
+          <input type="email" id="registerEmail" name="email" class="mt-1 p-2 w-full bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+        </div>
+        <div>
+          <label for="registerPassword" class="block text-sm font-medium text-gray-300">Пароль</label>
+          <input type="password" id="registerPassword" name="password" class="mt-1 p-2 w-full bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+        </div>
+        <div>
+          <label for="registerConfirmPassword" class="block text-sm font-medium text-gray-300">Подтвердите пароль</label>
+          <input type="password" id="registerConfirmPassword" name="confirmPassword" class="mt-1 p-2 w-full bg-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+        </div>
+        <button type="submit" class="w-full px-4 py-2 bg-yellow-600 hover:bg-orange-700 rounded-lg text-lg font-semibold transition duration-300">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const loginTab = document.getElementById('loginTab');
+    const registerTab = document.getElementById('registerTab');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const loginFormElement = document.getElementById('loginFormElement');
+    const registerFormElement = document.getElementById('registerFormElement');
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('bg-yellow-600', 'hover:bg-orange-700');
+      loginTab.classList.remove('bg-gray-700', 'hover:bg-gray-600');
+      registerTab.classList.add('bg-gray-700', 'hover:bg-gray-600');
+      registerTab.classList.remove('bg-yellow-600', 'hover:bg-orange-700');
+      loginForm.classList.remove('hidden');
+      registerForm.classList.add('hidden');
+    });
+
+    registerTab.addEventListener('click', () => {
+      registerTab.classList.add('bg-yellow-600', 'hover:bg-orange-700');
+      registerTab.classList.remove('bg-gray-700', 'hover:bg-gray-600');
+      loginTab.classList.add('bg-gray-700', 'hover:bg-gray-600');
+      loginTab.classList.remove('bg-yellow-600', 'hover:bg-orange-700');
+      registerForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+    });
+
+    loginFormElement.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      const response = await fetch('https://example.com/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      // Обработка ответа сервера (добавим позже)
+      console.log('Login attempt:', { email, password });
+    });
+
+    registerFormElement.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      const confirmPassword = document.getElementById('registerConfirmPassword').value;
+      if (password !== confirmPassword) {
+        alert('Пароли не совпадают');
+        return;
+      }
+      const response = await fetch('https://example.com/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      // Обработка ответа сервера (добавим позже)
+      console.log('Register attempt:', { email, password });
+    });
+  </script>
+</body>
+</html>
